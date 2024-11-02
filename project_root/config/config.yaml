@@ -1,10 +1,19 @@
 apps:
   - id: "com.finaccel.android"
     name: "kredivo"
-
-# Other configuration settings
+  - id: "id.co.shopintar"
+    name: "atome"
+  - id: "io.silvrr.installment"
+    name: "akulaku"
+  - id: "id.co.bri.ceria"
+    name: "ceria"
+    
 scraping:
   sleep_milliseconds: 30
   language: "id"
   country: "id"
   sort: "newest"
+
+topic_modeling:
+  input_file: "data/raw/ceria_reviews.csv"
+  num_topics: 5

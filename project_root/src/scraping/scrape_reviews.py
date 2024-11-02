@@ -1,5 +1,5 @@
 # Import necessary libraries
-from google_play_scraper import Sort, reviews_all
+from google_play_scraper import Sort, reviews_all, reviews
 import pandas as pd
 import os
 
@@ -21,11 +21,11 @@ def get_reviews(app_id, sleep_milliseconds=0, lang='id', country='id', sort=Sort
     sort_option = Sort.NEWEST if sort.lower() == "newest" else Sort.MOST_RELEVANT
     result = reviews(
         app_id,
-        sleep_milliseconds=sleep_milliseconds,
+        # sleep_milliseconds=sleep_milliseconds,
         lang=lang,
         country=country,
         sort=sort_option,
-        count=3
+        count=10
     )
     return result
 
@@ -44,7 +44,7 @@ def save_reviews_to_csv(app_id, app_name, output_dir="data/raw", sleep_milliseco
     """
     print(f"Fetching reviews for {app_name}...")
     reviews = get_reviews(app_id, sleep_milliseconds=sleep_milliseconds, lang=lang, country=country, sort=sort)
-    df = pd.DataFrame(reviews)
+    df = pd.DataFrame(reviews[0])
     
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
@@ -53,4 +53,3 @@ def save_reviews_to_csv(app_id, app_name, output_dir="data/raw", sleep_milliseco
     csv_path = os.path.join(output_dir, f"{app_name}_reviews.csv")
     df.to_csv(csv_path, index=False)
     print(f"Reviews for {app_name} saved to {csv_path}")
-    print(df.head())  # Optional: Display a preview of the data
