@@ -1,0 +1,10 @@
+apps:
+  - id: "com.finaccel.android"
+    name: "kredivo"
+
+# Other configuration settings
+scraping:
+  sleep_milliseconds: 30
+  language: "id"
+  country: "id"
+  sort: "newest"
