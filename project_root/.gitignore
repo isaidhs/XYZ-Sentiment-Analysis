@@ -1,6 +1,10 @@
 *.csv
 *.xlsx
 
+models/gpt_negative/
+models/gpt_positive/
+models/gpt_neutral/
+
 project_root/models/gpt_negative/
 project_root/models/gpt_positive/
 project_root/models/gpt_neutral/
