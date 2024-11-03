@@ -43,15 +43,18 @@ def run_topic_modeling_pipeline(config):
     # Run topic modeling
     run_topic_modeling(input_file=input_file)
 
+def 
+
 def main():
-    # Load the configuration
-    config = load_config()
+    pass
+    # # Load the configuration
+    # config = load_config()
 
-    # Run scraping
-    run_scraping(config)
+    # # Run scraping
+    # run_scraping(config)
 
-    # Run topic modeling
-    run_topic_modeling_pipeline(config)
+    # # Run topic modeling
+    # run_topic_modeling_pipeline(config)
     
 if __name__ == "__main__":
     main()
