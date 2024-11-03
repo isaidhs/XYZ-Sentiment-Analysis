@@ -17,3 +17,10 @@ scraping:
 topic_modeling:
   input_file: "data/raw/ceria_reviews.csv"
   num_topics: 5
+
+oversampling:
+  ceria: "data/raw/ceria_reviews.csv"
+  kredivo: "data/raw/kredivo_reviews.csv"
+  atome: "data/raw/atome_reviews.csv"
+  akulaku: "data/raw/akulaku_reviews.csv"
+  

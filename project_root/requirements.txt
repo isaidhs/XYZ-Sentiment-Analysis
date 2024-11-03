@@ -6,3 +6,6 @@ Sastrawi
 numpy==1.26.4
 gensim==4.3.3
 nltk
+torch
+huggingface
+transformers

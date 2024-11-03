@@ -45,3 +45,7 @@ def remove_specific_words(df):
         lambda text: " ".join([word for word in text.split() if word not in additional_stopwords])
     )
     return df
+
+# Apply Replacement on Content
+def replace_brand_words(text):
+    return re.sub(r'\b(bri ceria|ceria|akulaku|atome|kredivo|bri)\b', 'xyz', text, flags=re.IGNORECASE)

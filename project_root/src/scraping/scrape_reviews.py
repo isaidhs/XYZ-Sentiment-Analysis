@@ -25,7 +25,7 @@ def get_reviews(app_id, sleep_milliseconds=0, lang='id', country='id', sort=Sort
         lang=lang,
         country=country,
         sort=sort_option,
-        count=10
+        count=1000
     )
     return result
 

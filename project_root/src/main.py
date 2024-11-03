@@ -1,20 +1,6 @@
-import yaml
 from src.scraping.scrape_reviews import save_reviews_to_csv
 from src.modeling.topic_modeling import run_topic_modeling
-
-def load_config(config_path="config/config.yaml"):
-    """
-    Load configuration from a YAML file.
-    
-    Parameters:
-    - config_path (str): Path to the configuration YAML file.
-    
-    Returns:
-    - dict: Configuration settings.
-    """
-    with open(config_path, "r") as file:
-        config = yaml.safe_load(file)
-    return config
+from src.utils.file_utils import load_config
 
 def run_scraping(config):
     # Extract app list and scraping settings from config
@@ -43,15 +29,13 @@ def run_topic_modeling_pipeline(config):
     # Run topic modeling
     run_topic_modeling(input_file=input_file)
 
-def 
-
 def main():
     pass
     # # Load the configuration
-    # config = load_config()
+    config = load_config()
 
     # # Run scraping
-    # run_scraping(config)
+    run_scraping(config)
 
     # # Run topic modeling
     # run_topic_modeling_pipeline(config)

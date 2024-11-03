@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle
+import yaml
 
 def load_data(file_path):
     """
@@ -28,3 +29,17 @@ def load_model(file_path):
     """
     with open(file_path, 'rb') as f:
         return pickle.load(f)
+
+def load_config(config_path="config/config.yaml"):
+    """
+    Load configuration from a YAML file.
+    
+    Parameters:
+    - config_path (str): Path to the configuration YAML file.
+    
+    Returns:
+    - dict: Configuration settings.
+    """
+    with open(config_path, "r") as file:
+        config = yaml.safe_load(file)
+    return config
